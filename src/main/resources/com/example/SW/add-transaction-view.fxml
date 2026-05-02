@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<!--
+    add-transaction-view.fxml  –  US#3: Add Transaction
+    Linked controller: com.example.SW.Controller.AddTransactionController
+-->
+<AnchorPane prefHeight="500" prefWidth="420"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.SW.Controller.AddTransactionController">
+
+    <VBox layoutX="60" layoutY="30" spacing="14">
+
+        <Label text="Add Transaction" style="-fx-font-size: 20; -fx-font-weight: bold;" />
+
+        <!-- Income / Expense toggle -->
+        <HBox spacing="10">
+            <fx:define>
+                <ToggleGroup fx:id="typeGroup" />
+            </fx:define>
+            <ToggleButton fx:id="expenseToggle" text="↓ Expense"
+                          toggleGroup="$typeGroup" prefWidth="130"
+                          style="-fx-background-color: #f44336; -fx-text-fill: white;" />
+            <ToggleButton fx:id="incomeToggle" text="↑ Income"
+                          toggleGroup="$typeGroup" prefWidth="130"
+                          style="-fx-background-color: #4CAF50; -fx-text-fill: white;" />
+        </HBox>
+
+        <!-- Amount -->
+        <Label text="AMOUNT" />
+        <TextField fx:id="amountField" promptText="e.g. 150.00" prefWidth="280" />
+
+        <!-- Description -->
+        <Label text="DESCRIPTION" />
+        <TextField fx:id="descriptionField" promptText="e.g. Lunch at restaurant"
+                   prefWidth="280" />
+
+        <!-- Category -->
+        <Label text="CATEGORY" />
+        <ComboBox fx:id="categoryBox" prefWidth="280" promptText="Select category" />
+
+        <!-- Date -->
+        <Label text="DATE" />
+        <DatePicker fx:id="datePicker" prefWidth="280" />
+
+        <!-- Save button -->
+        <Button text="Save Transaction" onAction="#handleSaveTransaction"
+                prefWidth="280"
+                style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-size: 14;" />
+
+        <!-- Cancel -->
+        <Button text="Cancel" onAction="#handleCancel" prefWidth="280" />
+
+        <!-- Status / error message -->
+        <Label fx:id="statusLabel" text="" wrapText="true" prefWidth="280" />
+
+    </VBox>
+
+</AnchorPane>

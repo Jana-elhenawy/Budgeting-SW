@@ -1,12 +1,14 @@
 package com.example.SW.Controller;
 
 import com.example.SW.Model.Transaction;
+import com.example.SW.Util.SceneManager;
 import com.example.SW.Util.TransactionSession;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -83,6 +85,16 @@ public class TransactionController {
         fromDatePicker.setValue(null);
         toDatePicker.setValue(null);
         loadAll();
+    }
+
+    @FXML
+    private void handleAddTransaction() {
+        try {
+            SceneManager.switchTo("add-transaction-view.fxml");
+        } catch (IOException e) {
+            noDataLabel.setText("Could not open Add Transaction screen.");
+            noDataLabel.setVisible(true);
+        }
     }
 
     private void displayTransactions(List<Transaction> list) {

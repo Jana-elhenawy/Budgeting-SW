@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<!--
+    login-view.fxml  –  US#2: User Login
+    Linked controller: com.example.SW.Controller.LoginController
+-->
+<AnchorPane prefHeight="400" prefWidth="400"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.SW.Controller.LoginController">
+
+    <VBox layoutX="60" layoutY="60" spacing="12">
+
+        <Label text="BudgetWise" style="-fx-font-size: 26; -fx-font-weight: bold;" />
+        <Label text="Smart financial management" style="-fx-text-fill: grey;" />
+
+        <Label text="EMAIL" />
+        <TextField fx:id="emailField" promptText="your@email.com" prefWidth="280" />
+
+        <Label text="PASSWORD" />
+        <PasswordField fx:id="passwordField" promptText="••••••••" prefWidth="280" />
+
+        <Button text="Log In" onAction="#handleLogin"
+                prefWidth="280"
+                style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-size: 14;" />
+
+        <Label fx:id="statusLabel" text="" wrapText="true" prefWidth="280" />
+
+        <Hyperlink text="Don't have an account? Sign Up" onAction="#handleGoToSignUp" />
+
+    </VBox>
+
+</AnchorPane>

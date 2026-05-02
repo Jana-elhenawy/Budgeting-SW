@@ -1,55 +1,48 @@
 package com.example.SW.Util;
-import com.example.SW.Model.User;
 
-public class UserSession{
-    private static User currentUser;
+/**
+ * Singleton session holder for the currently logged-in user.
+ * Provides simple getters/setters used across all controllers.
+ */
+public class UserSession {
 
-    public static void setUser(User user){
-        currentUser = user;
-    }
-    public static User getUser(){
-        if (currentUser == null){
-            currentUser = new User("Guest","null@gmail.com","EGP","English",true);
-        }
-        return currentUser;
-    }
-    public static void clear(){
-        currentUser = null;
-    }
-    public static boolean isLoggedIn(){
-        if (currentUser != null){
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-    public static String getName()               {
-        return getUser().getName();
-    }
-    public static String getEmail(){
-        return getUser().getEmail();
-    }
-    public static String getCurrency(){
-        return getUser().getCurrency();
-    }
-    public static String getLanguage(){
-        return getUser().getLanguage();
-    }
-    public static boolean isNotificationsEnabled(){
-        return getUser().isNotificationsEnabled();
+    private static String name     = "";
+    private static String email    = "";
+    private static String currency = "EGP";
+    private static String language = "English";
+    private static boolean notificationsEnabled = true;
+
+    private UserSession() { }
+
+    /** Initialises the session when a user logs in successfully. */
+    public static void login(String name, String email) {
+        UserSession.name  = name;
+        UserSession.email = email;
     }
 
-    public static void setName(String v){
-        getUser().setName(v);
+    /** Clears the session on logout. */
+    public static void logout() {
+        name     = "";
+        email    = "";
+        currency = "EGP";
+        language = "English";
+        notificationsEnabled = true;
     }
-    public static void setCurrency(String v){
-        getUser().setCurrency(v);
-    }
-    public static void setLanguage(String v){
-        getUser().setLanguage(v);
-    }
-    public static void setNotifications(boolean v){
-        getUser().setNotificationsEnabled(v);
+
+    public static String getName()  { return name; }
+    public static void   setName(String name) { UserSession.name = name; }
+
+    public static String getEmail() { return email; }
+    public static void   setEmail(String email) { UserSession.email = email; }
+
+    public static String getCurrency() { return currency; }
+    public static void   setCurrency(String currency) { UserSession.currency = currency; }
+
+    public static String getLanguage() { return language; }
+    public static void   setLanguage(String language) { UserSession.language = language; }
+
+    public static boolean isNotificationsEnabled() { return notificationsEnabled; }
+    public static void    setNotifications(boolean enabled) {
+        notificationsEnabled = enabled;
     }
 }

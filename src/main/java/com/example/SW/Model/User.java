@@ -1,72 +1,49 @@
 package com.example.SW.Model;
 
+/**
+ * Represents a registered user of the BudgetWise application.
+ * Stores the user's credentials and display name.
+ */
 public class User {
 
-    private String name;
-    private String currency;
-    private String language;
+    private String fullName;
     private String email;
-    private boolean notificationsEnabled;
+    private String password;
 
-    // Constructor
-    public User(String name,String email, String currency, String language, boolean notificationsEnabled) {
-        this.name = name;
+    /**
+     * Constructs a User with the given name, email, and password.
+     *
+     * @param fullName the user's full name
+     * @param email    the user's email address
+     * @param password the user's plain-text password (hashed in real systems)
+     */
+    public User(String fullName, String email, String password) {
+        this.fullName = fullName;
         this.email = email;
-        this.currency = currency;
-        this.language = language;
-        this.notificationsEnabled = notificationsEnabled;
+        this.password = password;
     }
 
-    // Default constructor (important for flexibility)
-    public User() {
+    public String getFullName() {
+        return fullName;
     }
 
-    // Getters
-    public String getName() {
-        return name;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
-    public String getEmail(){
+
+    public String getEmail() {
         return email;
     }
-    public String getCurrency() {
-        return currency;
-    }
 
-    public String getLanguage() {
-        return language;
-    }
-
-    public boolean isNotificationsEnabled() {
-        return notificationsEnabled;
-    }
-
-    // Setters
-    public void setName(String name) {
-        this.name = name;
-    }
-    public void setEmail(String email){
+    public void setEmail(String email) {
         this.email = email;
     }
-    public void setCurrency(String currency) {
-        this.currency = currency;
+
+    public String getPassword() {
+        return password;
     }
 
-    public void setLanguage(String language) {
-        this.language = language;
-    }
-
-    public void setNotificationsEnabled(boolean notificationsEnabled) {
-        this.notificationsEnabled = notificationsEnabled;
-    }
-
-    // Optional (for debugging)
-    @Override
-    public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", currency='" + currency + '\'' +
-                ", language='" + language + '\'' +
-                ", notificationsEnabled=" + notificationsEnabled +
-                '}';
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

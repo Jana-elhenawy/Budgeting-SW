@@ -1,23 +1,21 @@
 package com.example.SW;
 
+import com.example.SW.Util.SceneManager;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
+/**
+ * JavaFX application entry point.
+ * Registers the primary stage with SceneManager and opens the Login screen.
+ */
 public class MainApp extends Application {
 
     @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(
-                MainApp.class.getResource("transaction-controller.fxml")
-        );
-        Scene scene = new Scene(loader.load());
+    public void start(Stage stage) throws Exception {
         stage.setTitle("BudgetWise");
         stage.setResizable(false);
-        stage.setScene(scene);
-        stage.show();
+        SceneManager.setPrimaryStage(stage);
+        // Start at the login screen so US#1 and US#2 are exercised first
+        SceneManager.switchTo("login-view.fxml");
     }
 }
