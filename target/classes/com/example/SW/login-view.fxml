@@ -23,7 +23,7 @@
         <Label text="Smart financial management" style="-fx-text-fill: grey;" />
 
         <Label text="EMAIL" />
-        <TextField fx:id="emailField" promptText="Jana@email.com" prefWidth="280" />
+        <TextField fx:id="emailField" promptText="your@email.com" prefWidth="280" />
 
         <Label text="PASSWORD" />
         <PasswordField fx:id="passwordField" promptText="••••••••" prefWidth="280" />
