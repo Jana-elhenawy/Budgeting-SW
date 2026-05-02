@@ -12,5 +12,11 @@ module com.example.SW {
     requires com.almasb.fxgl.all;
 
     opens com.example.SW to javafx.fxml;
+    opens com.example.SW.Controller to javafx.fxml;
+    opens com.example.SW.Model to javafx.base;
+
     exports com.example.SW;
+    exports com.example.SW.Controller;
+    exports com.example.SW.Model;
+    exports com.example.SW.Util;
 }

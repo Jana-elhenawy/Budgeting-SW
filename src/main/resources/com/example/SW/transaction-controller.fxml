@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="600.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.SW.Controller.TransactionController">
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ComboBox fx:id="filterTypeBox" prefWidth="150.0" promptText="Type" />
+            <ComboBox fx:id="filterCategoryBox" prefWidth="150.0" promptText="Category" />
+            <DatePicker fx:id="fromDatePicker" promptText="From" />
+            <DatePicker fx:id="toDatePicker" promptText="To" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <TableView fx:id="transactionTable" prefHeight="343.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="colType" prefWidth="75.0" text="Type" />
+          <TableColumn fx:id="colAmount" prefWidth="75.0" text="Amount" />
+            <TableColumn fx:id="colCategory" prefWidth="75.0" text="Category" />
+            <TableColumn fx:id="colDescription" prefWidth="75.0" text="Description" />
+            <TableColumn fx:id="colDate" prefWidth="75.0" text="Date" />
+        </columns>
+      </TableView>
+   </center>
+   <bottom>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="totalIncomeLabel" text="Label" />
+            <Label fx:id="totalExpenseLabel" text="Label" />
+            <Label fx:id="noDataLabel" text="Label" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
