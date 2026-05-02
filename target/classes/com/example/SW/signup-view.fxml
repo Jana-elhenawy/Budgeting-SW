@@ -23,10 +23,10 @@
         <Label text="Start your financial journey" style="-fx-text-fill: grey;" />
 
         <Label text="FULL NAME" />
-        <TextField fx:id="fullNameField" promptText="John Doe" prefWidth="280" />
+        <TextField fx:id="fullNameField" promptText="Jana Elhenawy" prefWidth="280" />
 
         <Label text="EMAIL" />
-        <TextField fx:id="emailField" promptText="john@email.com" prefWidth="280" />
+        <TextField fx:id="emailField" promptText="Jana@email.com" prefWidth="280" />
 
         <Label text="PASSWORD" />
         <PasswordField fx:id="passwordField" promptText="••••••••" prefWidth="280" />
