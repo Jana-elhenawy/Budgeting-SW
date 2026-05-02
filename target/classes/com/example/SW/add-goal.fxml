@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.SW.Controller.AddGoal"
+            prefHeight="400.0" prefWidth="600.0">
+
+
+    <TextField promptText="Goal Name" fx:id="nameInput" AnchorPane.topAnchor="20"/>
+    <TextField promptText="Goal Amount" fx:id="amountInput" AnchorPane.topAnchor="80"/>
+    <DatePicker fx:id="dateInput" AnchorPane.topAnchor="140"/>
+    <Button text="Create Goal" fx:id="creationButton" AnchorPane.topAnchor="200" onAction="#createGoal"/>
+
+
+</AnchorPane>

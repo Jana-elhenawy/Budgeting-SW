@@ -2,6 +2,7 @@ package com.example.SW.Util;
 
 import com.example.SW.Model.Transaction;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,5 +37,15 @@ public class TransactionSession {
     /** Clears all transactions (used on logout). */
     public static void clear() {
         transactions.clear();
+    }
+
+    public static List<Transaction> filterByDateRange(LocalDate startDate, LocalDate endDate) {
+        List<Transaction> result = new ArrayList<>();
+        for (Transaction t : transactions) {
+            if (!t.getDate().isBefore(startDate) && !t.getDate().isAfter(endDate)) {
+                result.add(t);
+            }
+        }
+        return result;
     }
 }
