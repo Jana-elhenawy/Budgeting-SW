@@ -13,11 +13,12 @@
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.SW.Controller.ReportsController"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="400.0" prefWidth="800.0">
 
     <DatePicker fx:id="startDate" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10"/>
     <DatePicker fx:id="endDate" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="200"/>
     <Button text="Generate Report" fx:id="generateButton" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="390" onAction="#generateReport"/>
+    <Button text="Back to Dashboard" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="580" onAction="#handleBackToDashboard"/>
     <PieChart fx:id="expensePieChart" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="310" AnchorPane.bottomAnchor="50"/>
     <BarChart fx:id="incomeExpenseBarChart" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="310" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="50">
     <xAxis>

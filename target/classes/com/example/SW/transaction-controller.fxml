@@ -43,6 +43,7 @@
             <Label fx:id="totalIncomeLabel" text="Label" />
             <Label fx:id="totalExpenseLabel" text="Label" />
             <Label fx:id="noDataLabel" text="Label" />
+             <Button text="Back to Dashboard" onAction="#handleBackToDashboard"/>
          </children>
       </HBox>
    </bottom>

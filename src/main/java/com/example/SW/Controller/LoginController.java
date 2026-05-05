@@ -53,8 +53,9 @@ public class LoginController {
         UserSession.login(user.getFullName(), user.getEmail());
 
         try {
-            SceneManager.switchTo("transaction-controller.fxml");
+            SceneManager.switchTo("dashboard.fxml");
         } catch (IOException e) {
+            e.printStackTrace();
             showError("Could not load the main screen.");
         }
     }

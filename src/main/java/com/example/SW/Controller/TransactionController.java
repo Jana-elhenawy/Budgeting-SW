@@ -112,4 +112,8 @@ public class TransactionController {
         totalIncomeLabel.setText(String.format("+%.2f %s", totalIncome, "EGP"));
         totalExpenseLabel.setText(String.format("-%.2f %s", totalExpense, "EGP"));
     }
+    @FXML
+    private void handleBackToDashboard() throws IOException {
+        SceneManager.switchTo("dashboard.fxml");
+    }
 }

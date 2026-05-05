@@ -16,6 +16,6 @@ public class MainApp extends Application {
         stage.setResizable(false);
         SceneManager.setPrimaryStage(stage);
         // Start at the login screen so US#1 and US#2 are exercised first
-        SceneManager.switchTo("view-reports.fxml");
+        SceneManager.switchTo("signup-view.fxml");
     }
 }

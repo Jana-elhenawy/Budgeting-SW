@@ -78,7 +78,7 @@ public class SignUpController {
         UserSession.login(fullName, email);
 
         try {
-            SceneManager.switchTo("transaction-controller.fxml");
+            SceneManager.switchTo("dashboard.fxml");
         } catch (IOException e) {
             showError("Could not load the main screen.");
         }

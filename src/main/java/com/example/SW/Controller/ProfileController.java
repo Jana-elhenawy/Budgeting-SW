@@ -1,8 +1,11 @@
 package com.example.SW.Controller;
 
+import com.example.SW.Util.SceneManager;
 import com.example.SW.Util.UserSession;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+
+import java.io.IOException;
 
 public class ProfileController {
 
@@ -44,5 +47,9 @@ public class ProfileController {
 
         statusLabel.setText("Profile saved successfully!");
         statusLabel.setStyle("-fx-text-fill: green;");
+    }
+    @FXML
+    private void handleBackToDashboard() throws IOException {
+        SceneManager.switchTo("dashboard.fxml");
     }
 }

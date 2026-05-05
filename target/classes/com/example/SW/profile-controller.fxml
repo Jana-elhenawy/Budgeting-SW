@@ -26,8 +26,9 @@
       <CheckBox fx:id="notificationCheck" text="Enable Notifications" />
 
       <Button onAction="#handleSave" text="Save" />
-
+      <Button text="Back to Dashboard" onAction="#handleBackToDashboard"/>
       <Label fx:id="statusLabel" />
+
    </VBox>
 
 </AnchorPane>

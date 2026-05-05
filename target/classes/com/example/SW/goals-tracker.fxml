@@ -16,6 +16,8 @@
               AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10"
               AnchorPane.rightAnchor="10"/>
     <Button text="+ Add Goal" fx:id="addButton" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10" onAction="#openAddGoal"/>
+    <Button text="Edit Goal" AnchorPane.rightAnchor="110" AnchorPane.topAnchor="10" onAction="#handleEditGoal"/>
+    <Button text="Back to Dashboard" onAction="#handleBackToDashboard"/>
 
 
 

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox spacing="20" alignment="CENTER"
+      prefWidth="800" prefHeight="600"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.SW.Controller.DashboardController">
+
+    <!-- Title -->
+    <Label text="Dashboard" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <!-- Welcome -->
+    <Label fx:id="welcomeLabel" text="Welcome"/>
+
+    <!-- Summary -->
+    <HBox spacing="20" alignment="CENTER">
+        <Label fx:id="incomeLabel" text="Income: 0"/>
+        <Label fx:id="expenseLabel" text="Expense: 0"/>
+        <Label fx:id="balanceLabel" text="Balance: 0"/>
+    </HBox>
+
+    <!-- Navigation Buttons -->
+    <VBox spacing="10" alignment="CENTER">
+
+        <Button text="Transactions" onAction="#goToTransactions"/>
+        <Button text="Budgets" onAction="#goToBudget"/>
+        <Button text="Goals" onAction="#goToGoals"/>
+        <Button text="Reports" onAction="#goToReports"/>
+        <Button text="Profile" onAction="#goToProfile"/>
+
+    </VBox>
+
+</VBox>

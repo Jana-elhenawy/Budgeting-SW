@@ -2,6 +2,7 @@ package com.example.SW.Controller;
 
 import com.example.SW.Model.Report;
 import com.example.SW.Util.ReportsSession;
+import com.example.SW.Util.SceneManager;
 import javafx.fxml.FXML;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.PieChart;
@@ -9,6 +10,8 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Map;
 
@@ -48,5 +51,9 @@ public class ReportsController {
 
         insightMessage.setText("Total Income: " + report.getTotalIncome() +
                 " | Total Expense: " + report.getTotalExpense());
+    }
+    @FXML
+    private void handleBackToDashboard() throws IOException {
+        SceneManager.switchTo("dashboard.fxml");
     }
 }
