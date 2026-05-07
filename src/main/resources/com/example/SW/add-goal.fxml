@@ -1,21 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.SW.Controller.AddGoal"
-            prefHeight="400.0" prefWidth="600.0">
+<VBox spacing="0" alignment="TOP_CENTER"
+      prefHeight="400" prefWidth="440"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.SW.Controller.AddGoal"
+      stylesheets="@/com/example/SW/styles.css"
+      style="-fx-background-color: #F3F6FB; -fx-padding: 36 56 36 56;">
 
+    <!-- Header -->
+    <Label text="Create Goal" styleClass="page-title"
+           style="-fx-padding: 0 0 4 0;" />
+    <Label text="Set a savings target to work towards"
+           styleClass="page-subtitle"
+           style="-fx-padding: 0 0 24 0;" />
 
-    <TextField promptText="Goal Name" fx:id="nameInput" AnchorPane.topAnchor="20"/>
-    <TextField promptText="Goal Amount" fx:id="amountInput" AnchorPane.topAnchor="80"/>
-    <DatePicker fx:id="dateInput" AnchorPane.topAnchor="140"/>
-    <Button text="Create Goal" fx:id="creationButton" AnchorPane.topAnchor="200" onAction="#createGoal"/>
+    <!-- Goal Name -->
+    <Label text="GOAL NAME" styleClass="field-label" />
+    <TextField fx:id="nameInput" promptText="e.g. Emergency Fund"
+               prefWidth="328" styleClass="text-field"
+               style="-fx-padding: 9 12 9 12;" />
 
+    <!-- Goal Amount -->
+    <Label text="TARGET AMOUNT" styleClass="field-label" />
+    <TextField fx:id="amountInput" promptText="e.g. 5000.00"
+               prefWidth="328" styleClass="text-field"
+               style="-fx-padding: 9 12 9 12;" />
 
-</AnchorPane>
+    <!-- Target Date -->
+    <Label text="TARGET DATE" styleClass="field-label" />
+    <DatePicker fx:id="dateInput" prefWidth="328"
+                style="-fx-padding: 4 12 4 12;" />
+
+    <!-- Actions -->
+    <HBox spacing="12" style="-fx-padding: 24 0 0 0;" alignment="CENTER">
+        <Button text="Create Goal" fx:id="creationButton" onAction="#createGoal"
+                prefWidth="180" styleClass="btn-primary"
+                style="-fx-padding: 11 0 11 0;" />
+    </HBox>
+
+</VBox>

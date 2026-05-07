@@ -1,19 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-
-<VBox spacing="10" alignment="CENTER"
+<VBox spacing="0" alignment="TOP_CENTER"
+      prefWidth="400" prefHeight="340"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.SW.Controller.AddBudgetController">
+      fx:controller="com.example.SW.Controller.AddBudgetController"
+      stylesheets="@/com/example/SW/styles.css"
+      style="-fx-background-color: #F3F6FB; -fx-padding: 36 48 36 48;">
 
-    <TextField fx:id="categoryField" promptText="Category"/>
-    <TextField fx:id="limitField" promptText="Limit"/>
+    <!-- Header -->
+    <Label text="Add Budget" styleClass="page-title"
+           style="-fx-padding: 0 0 4 0;" />
+    <Label text="Set a spending limit for a category"
+           styleClass="page-subtitle"
+           style="-fx-padding: 0 0 24 0;" />
 
-    <Button text="Save" onAction="#handleSave"/>
-    <Button text="Back" onAction="#handleBack"/>
+    <!-- Category -->
+    <Label text="CATEGORY" styleClass="field-label" />
+    <TextField fx:id="categoryField" promptText="e.g. Groceries"
+               prefWidth="304" styleClass="text-field"
+               style="-fx-padding: 9 12 9 12;" />
+
+    <!-- Limit -->
+    <Label text="MONTHLY LIMIT" styleClass="field-label" />
+    <TextField fx:id="limitField" promptText="e.g. 500.00"
+               prefWidth="304" styleClass="text-field"
+               style="-fx-padding: 9 12 9 12;" />
+
+    <!-- Actions -->
+    <HBox spacing="12" style="-fx-padding: 22 0 0 0;" alignment="CENTER">
+        <Button text="Save Budget" onAction="#handleSave"
+                prefWidth="160" styleClass="btn-primary"
+                style="-fx-padding: 11 0 11 0;" />
+        <Button text="Cancel" onAction="#handleBack"
+                prefWidth="128" styleClass="btn-ghost"
+                style="-fx-padding: 10 0 10 0;" />
+    </HBox>
 
 </VBox>

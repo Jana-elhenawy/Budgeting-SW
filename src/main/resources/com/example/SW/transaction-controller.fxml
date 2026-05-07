@@ -8,43 +8,91 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity"
             minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="600.0" prefWidth="800.0"
-            xmlns="http://javafx.com/javafx/26"
+            prefHeight="620" prefWidth="820"
+            xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.SW.Controller.TransactionController">
-   <top>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <ComboBox fx:id="filterTypeBox" prefWidth="150.0" promptText="Type" />
-            <ComboBox fx:id="filterCategoryBox" prefWidth="150.0" promptText="Category" />
-            <DatePicker fx:id="fromDatePicker" promptText="From" />
-            <DatePicker fx:id="toDatePicker" promptText="To" />
-            <Button text="+ Add Transaction" onAction="#handleAddTransaction" />
-         </children>
-      </HBox>
-   </top>
-   <center>
-      <TableView fx:id="transactionTable" prefHeight="343.0" prefWidth="800.0" BorderPane.alignment="CENTER">
-        <columns>
-          <TableColumn fx:id="colType" prefWidth="75.0" text="Type" />
-          <TableColumn fx:id="colAmount" prefWidth="75.0" text="Amount" />
-            <TableColumn fx:id="colCategory" prefWidth="75.0" text="Category" />
-            <TableColumn fx:id="colDescription" prefWidth="75.0" text="Description" />
-            <TableColumn fx:id="colDate" prefWidth="75.0" text="Date" />
-        </columns>
-      </TableView>
-   </center>
-   <bottom>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label fx:id="totalIncomeLabel" text="Label" />
-            <Label fx:id="totalExpenseLabel" text="Label" />
-            <Label fx:id="noDataLabel" text="Label" />
-             <Button text="Back to Dashboard" onAction="#handleBackToDashboard"/>
-         </children>
-      </HBox>
-   </bottom>
+            fx:controller="com.example.SW.Controller.TransactionController"
+            stylesheets="@/com/example/SW/styles.css"
+            style="-fx-background-color: #F3F6FB;">
+
+    <!-- ── Top Bar ─────────────────────────────────────────── -->
+    <top>
+        <VBox style="-fx-background-color: #FFFFFF;
+                     -fx-border-color: transparent transparent #D8DEE9 transparent;
+                     -fx-padding: 16 24 16 24;" spacing="12">
+
+            <HBox alignment="CENTER_LEFT" spacing="0">
+                <Label text="Transactions"
+                       style="-fx-font-size: 20px; -fx-font-weight: bold;
+                              -fx-text-fill: #1C2536;" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button text="+ Add Transaction" onAction="#handleAddTransaction"
+                        styleClass="btn-primary"
+                        style="-fx-padding: 9 18 9 18;" />
+            </HBox>
+
+            <!-- Filters Row -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <ComboBox fx:id="filterTypeBox" prefWidth="140"
+                          promptText="All Types"
+                          style="-fx-padding: 4 8 4 8;" />
+                <ComboBox fx:id="filterCategoryBox" prefWidth="150"
+                          promptText="All Categories"
+                          style="-fx-padding: 4 8 4 8;" />
+                <Label text="From" styleClass="field-label"
+                       style="-fx-padding: 0 4 0 8;" />
+                <DatePicker fx:id="fromDatePicker"
+                            style="-fx-padding: 4 8 4 8;" />
+                <Label text="To" styleClass="field-label"
+                       style="-fx-padding: 0 4 0 8;" />
+                <DatePicker fx:id="toDatePicker"
+                            style="-fx-padding: 4 8 4 8;" />
+            </HBox>
+
+        </VBox>
+    </top>
+
+    <!-- ── Table ───────────────────────────────────────────── -->
+    <center>
+        <VBox style="-fx-padding: 20 24 0 24;" BorderPane.alignment="CENTER">
+            <TableView fx:id="transactionTable"
+                       prefHeight="380" prefWidth="772"
+                       styleClass="table-view">
+                <columns>
+                    <TableColumn fx:id="colType"    prefWidth="90"  text="Type" />
+                    <TableColumn fx:id="colAmount"  prefWidth="110" text="Amount" />
+                    <TableColumn fx:id="colCategory" prefWidth="140" text="Category" />
+                    <TableColumn fx:id="colDescription" prefWidth="232" text="Description" />
+                    <TableColumn fx:id="colDate"    prefWidth="120" text="Date" />
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+    <!-- ── Bottom Bar ─────────────────────────────────────── -->
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="20"
+              style="-fx-background-color: #FFFFFF;
+                     -fx-border-color: #D8DEE9 transparent transparent transparent;
+                     -fx-padding: 14 24 14 24;">
+            <Label fx:id="totalIncomeLabel" text=""
+                   style="-fx-font-size: 13px; -fx-font-weight: bold;
+                          -fx-text-fill: #1E8C5A;" />
+            <Label fx:id="totalExpenseLabel" text=""
+                   style="-fx-font-size: 13px; -fx-font-weight: bold;
+                          -fx-text-fill: #D93025;" />
+            <Label fx:id="noDataLabel" text=""
+                   style="-fx-font-size: 13px; -fx-text-fill: #6B7A99;" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button text="← Back to Dashboard" onAction="#handleBackToDashboard"
+                    styleClass="btn-ghost"
+                    style="-fx-padding: 8 16 8 16;" />
+        </HBox>
+    </bottom>
+
 </BorderPane>

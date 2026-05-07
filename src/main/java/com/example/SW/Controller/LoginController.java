@@ -13,13 +13,6 @@ import java.io.IOException;
 
 /**
  * Controller for the Login screen (User Story #2).
- *
- * Responsibilities:
- *   - Validate that neither email nor password is blank.
- *   - Authenticate against the UserStore (in-memory user registry).
- *   - On success, populate UserSession and navigate to the main screen.
- *   - On failure, display the error message required by the SRS:
- *     "Invalid email or password. Please try again."
  */
 public class LoginController {
 
@@ -55,9 +48,9 @@ public class LoginController {
         try {
             SceneManager.switchTo("dashboard.fxml");
         } catch (IOException e) {
-            e.printStackTrace();
-            showError("Could not load the main screen.");
-        }
+        e.printStackTrace();
+        showError("Could not load the main screen: " + e.getMessage());
+    }
     }
 
     /**

@@ -6,41 +6,66 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 <!--
     signup-view.fxml  –  US#1: User Sign-Up
     Linked controller: com.example.SW.Controller.SignUpController
 -->
-<AnchorPane prefHeight="480" prefWidth="400"
+<AnchorPane prefHeight="540" prefWidth="440"
             xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.SW.Controller.SignUpController">
+            fx:controller="com.example.SW.Controller.SignUpController"
+            stylesheets="@/com/example/SW/styles.css">
 
-    <VBox layoutX="60" layoutY="40" spacing="12">
+    <VBox layoutX="60" layoutY="50" spacing="0" prefWidth="320">
 
-        <Label text="Create Account" style="-fx-font-size: 22; -fx-font-weight: bold;" />
-        <Label text="Start your financial journey" style="-fx-text-fill: grey;" />
+        <!-- Branding -->
+        <Label text="Budgeting SW" styleClass="app-brand" />
+        <Label text="Create your account" styleClass="page-subtitle"
+               style="-fx-padding: 4 0 24 0;" />
 
-        <Label text="FULL NAME" />
-        <TextField fx:id="fullNameField" promptText="Jana Elhenawy" prefWidth="280" />
+        <!-- Full Name -->
+        <Label text="FULL NAME" styleClass="field-label" />
+        <TextField fx:id="fullNameField" promptText="Jana Elhenawy"
+                   prefWidth="320" styleClass="text-field"
+                   style="-fx-padding: 9 12 9 12;" />
 
-        <Label text="EMAIL" />
-        <TextField fx:id="emailField" promptText="Jana@email.com" prefWidth="280" />
+        <!-- Email -->
+        <Label text="EMAIL" styleClass="field-label" />
+        <TextField fx:id="emailField" promptText="jana@email.com"
+                   prefWidth="320" styleClass="text-field"
+                   style="-fx-padding: 9 12 9 12;" />
 
-        <Label text="PASSWORD" />
-        <PasswordField fx:id="passwordField" promptText="••••••••" prefWidth="280" />
+        <!-- Password -->
+        <Label text="PASSWORD" styleClass="field-label" />
+        <PasswordField fx:id="passwordField" promptText="••••••••"
+                       prefWidth="320" styleClass="password-field"
+                       style="-fx-padding: 9 12 9 12;" />
 
-        <Label text="CONFIRM PASSWORD" />
-        <PasswordField fx:id="confirmPasswordField" promptText="••••••••" prefWidth="280" />
+        <!-- Confirm Password -->
+        <Label text="CONFIRM PASSWORD" styleClass="field-label" />
+        <PasswordField fx:id="confirmPasswordField" promptText="••••••••"
+                       prefWidth="320" styleClass="password-field"
+                       style="-fx-padding: 9 12 9 12;" />
 
+        <!-- Status -->
+        <Label fx:id="statusLabel" text="" wrapText="true"
+               prefWidth="320" styleClass="status-label"
+               style="-fx-padding: 6 0 0 0;" />
+
+        <!-- Create Account Button -->
         <Button text="Create Account" onAction="#handleCreateAccount"
-                prefWidth="280"
-                style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14;" />
+                prefWidth="320" styleClass="btn-success"
+                style="-fx-padding: 11 0 11 0; -fx-font-size: 14px;
+                       -fx-margin: 16 0 0 0;" />
 
-        <Label fx:id="statusLabel" text="" wrapText="true" prefWidth="280" />
-
-        <Hyperlink text="Already have an account? Log In" onAction="#handleGoToLogin" />
+        <HBox alignment="CENTER" style="-fx-padding: 14 0 0 0;">
+            <Hyperlink text="Already have an account? Log In"
+                       onAction="#handleGoToLogin"
+                       styleClass="hyperlink" />
+        </HBox>
 
     </VBox>
 

@@ -1,37 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Region?>
 
-<VBox spacing="20" alignment="CENTER"
-      prefWidth="800" prefHeight="600"
+<VBox spacing="0" alignment="TOP_CENTER"
+      prefWidth="820" prefHeight="640"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.SW.Controller.DashboardController">
+      fx:controller="com.example.SW.Controller.DashboardController"
+      stylesheets="@/com/example/SW/styles.css"
+      style="-fx-background-color: #F8FAFC;">
 
-    <!-- Title -->
-    <Label text="Dashboard" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
-
-    <!-- Welcome -->
-    <Label fx:id="welcomeLabel" text="Welcome"/>
-
-    <!-- Summary -->
-    <HBox spacing="20" alignment="CENTER">
-        <Label fx:id="incomeLabel" text="Income: 0"/>
-        <Label fx:id="expenseLabel" text="Expense: 0"/>
-        <Label fx:id="balanceLabel" text="Balance: 0"/>
+    <!-- Top Bar -->
+    <HBox styleClass="top-bar" spacing="0">
+        <Label text="Budgeting SW" styleClass="page-title" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Label fx:id="welcomeLabel" text="Welcome" styleClass="top-bar-sub" />
     </HBox>
 
-    <!-- Navigation Buttons -->
-    <VBox spacing="10" alignment="CENTER">
+    <!-- Content Area -->
+    <VBox spacing="20" styleClass="content-area">
 
-        <Button text="Transactions" onAction="#goToTransactions"/>
-        <Button text="Budgets" onAction="#goToBudget"/>
-        <Button text="Goals" onAction="#goToGoals"/>
-        <Button text="Reports" onAction="#goToReports"/>
-        <Button text="Profile" onAction="#goToProfile"/>
+        <!-- Summary Cards -->
+        <HBox spacing="16" alignment="CENTER_LEFT">
+
+            <VBox prefWidth="200" spacing="6"
+                  style="-fx-background-color: #F0FDF4; -fx-background-radius: 14; -fx-border-color: #D1FAE5; -fx-border-radius: 14; -fx-border-width: 1; -fx-padding: 20 24 20 24;">
+                <Label text="TOTAL INCOME" styleClass="stat-label" />
+                <Label fx:id="incomeLabel" text="0.00"
+                       style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #10B981;" />
+            </VBox>
+
+            <VBox prefWidth="200" spacing="6"
+                  style="-fx-background-color: #FFF5F5; -fx-background-radius: 14; -fx-border-color: #FEE2E2; -fx-border-radius: 14; -fx-border-width: 1; -fx-padding: 20 24 20 24;">
+                <Label text="TOTAL EXPENSES" styleClass="stat-label" />
+                <Label fx:id="expenseLabel" text="0.00"
+                       style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #EF4444;" />
+            </VBox>
+
+            <VBox prefWidth="200" spacing="6"
+                  style="-fx-background-color: #EFF6FF; -fx-background-radius: 14; -fx-border-color: #DBEAFE; -fx-border-radius: 14; -fx-border-width: 1; -fx-padding: 20 24 20 24;">
+                <Label text="BALANCE" styleClass="stat-label" />
+                <Label fx:id="balanceLabel" text="0.00"
+                       style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1E293B;" />
+            </VBox>
+
+        </HBox>
+
+        <Label text="Quick Navigation" styleClass="card-subtitle"
+               style="-fx-padding: 8 0 4 0;" />
+
+        <GridPane hgap="14" vgap="14">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50" />
+                <ColumnConstraints percentWidth="50" />
+            </columnConstraints>
+
+            <Button text="Transactions" onAction="#goToTransactions"
+                    prefWidth="Infinity" prefHeight="52" styleClass="btn-secondary"
+                    GridPane.columnIndex="0" GridPane.rowIndex="0" />
+
+            <Button text="Budgets" onAction="#goToBudget"
+                    prefWidth="Infinity" prefHeight="52" styleClass="btn-secondary"
+                    GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Button text="Goals" onAction="#goToGoals"
+                    prefWidth="Infinity" prefHeight="52" styleClass="btn-secondary"
+                    GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+            <Button text="Reports" onAction="#goToReports"
+                    prefWidth="Infinity" prefHeight="52" styleClass="btn-secondary"
+                    GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Button text="Profile" onAction="#goToProfile"
+                    prefWidth="Infinity" prefHeight="52" styleClass="btn-secondary"
+                    GridPane.columnIndex="0" GridPane.rowIndex="2" />
+
+        </GridPane>
 
     </VBox>
 

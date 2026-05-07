@@ -79,9 +79,10 @@ public class SignUpController {
 
         try {
             SceneManager.switchTo("dashboard.fxml");
-        } catch (IOException e) {
-            showError("Could not load the main screen.");
-        }
+         } catch (IOException e) {
+        e.printStackTrace();
+        showError("Could not load the main screen: " + e.getMessage());
+    }
     }
 
     /**

@@ -4,37 +4,57 @@
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 
 <!--
     login-view.fxml  –  US#2: User Login
     Linked controller: com.example.SW.Controller.LoginController
 -->
-<AnchorPane prefHeight="400" prefWidth="400"
+<AnchorPane prefHeight="480" prefWidth="440"
             xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.SW.Controller.LoginController">
+            fx:controller="com.example.SW.Controller.LoginController"
+            stylesheets="@/com/example/SW/styles.css">
 
-    <VBox layoutX="60" layoutY="60" spacing="12">
+    <VBox layoutX="60" layoutY="60" spacing="0" prefWidth="320">
 
-        <Label text="BudgetWise" style="-fx-font-size: 26; -fx-font-weight: bold;" />
-        <Label text="Smart financial management" style="-fx-text-fill: grey;" />
+        <!-- Branding -->
+        <Label text="Budgeting SW" styleClass="app-brand" />
+        <Label text="Smart financial management" styleClass="page-subtitle"
+               style="-fx-padding: 4 0 28 0;" />
 
-        <Label text="EMAIL" />
-        <TextField fx:id="emailField" promptText="your@email.com" prefWidth="280" />
+        <!-- Email -->
+        <Label text="EMAIL" styleClass="field-label" />
+        <TextField fx:id="emailField" promptText="your@email.com"
+                   prefWidth="320" styleClass="text-field"
+                   style="-fx-padding: 9 12 9 12;" />
 
-        <Label text="PASSWORD" />
-        <PasswordField fx:id="passwordField" promptText="••••••••" prefWidth="280" />
+        <!-- Password -->
+        <Label text="PASSWORD" styleClass="field-label" />
+        <PasswordField fx:id="passwordField" promptText="••••••••"
+                       prefWidth="320" styleClass="password-field"
+                       style="-fx-padding: 9 12 9 12;" />
 
+        <!-- Status -->
+        <Label fx:id="statusLabel" text="" wrapText="true"
+               prefWidth="320" styleClass="status-label"
+               style="-fx-padding: 6 0 0 0;" />
+
+        <!-- Log In Button -->
         <Button text="Log In" onAction="#handleLogin"
-                prefWidth="280"
-                style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-size: 14;" />
+                prefWidth="320" styleClass="btn-primary"
+                style="-fx-padding: 11 0 11 0; -fx-font-size: 14px;
+                       -fx-margin: 16 0 0 0;" />
 
-        <Label fx:id="statusLabel" text="" wrapText="true" prefWidth="280" />
-
-        <Hyperlink text="Don't have an account? Sign Up" onAction="#handleGoToSignUp" />
+        <HBox alignment="CENTER" style="-fx-padding: 16 0 0 0;">
+            <Hyperlink text="Don't have an account? Sign Up"
+                       onAction="#handleGoToSignUp"
+                       styleClass="hyperlink" />
+        </HBox>
 
     </VBox>
 

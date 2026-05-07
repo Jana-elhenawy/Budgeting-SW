@@ -1,19 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
 
-<VBox spacing="10" alignment="CENTER"
+<!--
+  edit-goal.fxml
+  Controller: EditGoalController
+  This screen opens as a POPUP Stage (not via SceneManager).
+  Methods available: handleSave()  — called via onAction
+  Fields: nameField, targetField, dateField
+  Data is injected via setGoal(index, goal) from GoalsController.
+-->
+<VBox spacing="0" alignment="TOP_CENTER"
+      prefWidth="420" prefHeight="340"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.SW.Controller.EditGoalController">
+      fx:controller="com.example.SW.Controller.EditGoalController"
+      stylesheets="@/com/example/SW/styles.css"
+      style="-fx-background-color: #F3F6FB;">
 
-    <TextField fx:id="nameField" promptText="Goal Name"/>
-    <TextField fx:id="targetField" promptText="Target Amount"/>
-    <DatePicker fx:id="dateField"/>
+    <!-- ── Top Bar ── -->
+    <HBox alignment="CENTER_LEFT"
+          style="-fx-background-color: #FFFFFF;
+                 -fx-border-color: transparent transparent #D8DEE9 transparent;
+                 -fx-padding: 16 24 16 24;">
+        <Label text="🎯  Edit Goal"
+               style="-fx-font-size: 18px; -fx-font-weight: bold;
+                      -fx-text-fill: #1A73E8;" />
+    </HBox>
 
-    <Button text="Save Changes" onAction="#handleSave"/>
+    <!-- ── Form ── -->
+    <VBox spacing="16"
+          style="-fx-padding: 24;
+                 -fx-background-color: #F3F6FB;">
 
+        <!-- Goal Name -->
+        <VBox spacing="6">
+            <Label text="Goal Name"
+                   style="-fx-font-size: 13px; -fx-font-weight: bold;
+                          -fx-text-fill: #374151;" />
+            <TextField fx:id="nameField"
+                       promptText="e.g. Emergency Fund"
+                       style="-fx-background-color: #FFFFFF;
+                              -fx-border-color: #E2E8F0;
+                              -fx-border-radius: 8px;
+                              -fx-background-radius: 8px;
+                              -fx-border-width: 1.5px;
+                              -fx-padding: 8 12 8 12;
+                              -fx-font-size: 14px;" />
+        </VBox>
+
+        <!-- Target Amount -->
+        <VBox spacing="6">
+            <Label text="Target Amount"
+                   style="-fx-font-size: 13px; -fx-font-weight: bold;
+                          -fx-text-fill: #374151;" />
+            <TextField fx:id="targetField"
+                       promptText="0.00"
+                       style="-fx-background-color: #FFFFFF;
+                              -fx-border-color: #E2E8F0;
+                              -fx-border-radius: 8px;
+                              -fx-background-radius: 8px;
+                              -fx-border-width: 1.5px;
+                              -fx-padding: 8 12 8 12;
+                              -fx-font-size: 14px;" />
+        </VBox>
+
+        <!-- Deadline -->
+        <VBox spacing="6">
+            <Label text="Deadline"
+                   style="-fx-font-size: 13px; -fx-font-weight: bold;
+                          -fx-text-fill: #374151;" />
+            <DatePicker fx:id="dateField"
+                        maxWidth="Infinity"
+                        style="-fx-background-color: #FFFFFF;
+                               -fx-border-color: #E2E8F0;
+                               -fx-border-radius: 8px;
+                               -fx-background-radius: 8px;
+                               -fx-border-width: 1.5px;" />
+        </VBox>
+
+        <!-- Buttons -->
+        <HBox spacing="12" alignment="CENTER_RIGHT" style="-fx-padding: 8 0 0 0;">
+            <Button text="💾  Save Changes"
+                    onAction="#handleSave"
+                    style="-fx-background-color: #4F46E5;
+                           -fx-text-fill: #FFFFFF;
+                           -fx-font-size: 14px;
+                           -fx-font-weight: bold;
+                           -fx-background-radius: 9px;
+                           -fx-padding: 10 22 10 22;
+                           -fx-cursor: hand;
+                           -fx-border-color: transparent;" />
+        </HBox>
+
+    </VBox>
 </VBox>

@@ -12,7 +12,7 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        stage.setTitle("BudgetWise");
+        stage.setTitle("Budgeting SW");
         stage.setResizable(false);
         SceneManager.setPrimaryStage(stage);
         // Start at the login screen so US#1 and US#2 are exercised first
