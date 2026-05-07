@@ -1,0 +1,10 @@
+site_name: BudgetWise Documentation
+
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - Features: features.md
+  - UML: uml.md
+  - Screenshots: screenshots.md
